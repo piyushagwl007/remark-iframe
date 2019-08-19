@@ -1,6 +1,6 @@
 {
   "name": "remark-iframes-extended",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "url": "https://github.com/piyushagwl007/remark-iframe",
     "type": "git"
@@ -12,7 +12,7 @@
     "test": "jest",
     "coverage": "jest --coverage"
   },
-  "main": "index.js",
+  "main": "dist/index.js",
   "files": [
     "LICENSE-MIT",
     "dist",
@@ -27,6 +27,13 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "cross-env": "^5.2.0",
     "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "del-cli": "^2.0.0"
   }
 }
