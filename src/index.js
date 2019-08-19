@@ -8,10 +8,7 @@ module.exports = function plugin (opts) {
   }
 
   function detectProvider (url) {
-    let hostname = parse(url).hostname
-    if(!hostname) {
-      hostname = 'default';
-    }
+    const  hostname = parse(url).hostname || 'default';
     return opts[hostname]
   }
 

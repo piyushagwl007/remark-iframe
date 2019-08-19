@@ -12,8 +12,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
-
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 var _require = require('url'),
@@ -31,12 +29,7 @@ module.exports = function plugin(opts) {
   }
 
   function detectProvider(url) {
-    var hostname = parse(url).hostname;
-
-    if (!hostname) {
-      hostname = (_readOnlyError("hostname"), 'default');
-    }
-
+    var hostname = parse(url).hostname || 'default';
     return opts[hostname];
   }
 
